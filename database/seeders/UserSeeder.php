@@ -9,21 +9,23 @@ use App\Models\User;
 class UserSeeder extends Seeder
 {
     public function run(): void
-    {
-        if (User::where('email', 'admin@pos.com')->doesntExist()) {
-            User::create([
-                'name'     => 'Admin User',
-                'email'    => 'admin@pos.com',
-                'password' => Hash::make('password'),
-                'role'     => 'admin',
-            ]);
+{
+    if (User::where('email', 'admin@pos.com')->doesntExist()) {
+        User::create([
+            'name'     => 'Admin User',
+            'email'    => 'admin@pos.com',
+            'password' => Hash::make('password'),
+            'role'     => 'admin',
+            'pin'      => Hash::make('1234'),
+        ]);
 
-            User::create([
-                'name'     => 'Attendant User',
-                'email'    => 'attendant@pos.com',
-                'password' => Hash::make('password'),
-                'role'     => 'attendant',
-            ]);
-        }
+        User::create([
+            'name'     => 'Attendant User',
+            'email'    => 'attendant@pos.com',
+            'password' => Hash::make('password'),
+            'role'     => 'attendant',
+            'pin'      => Hash::make('1234'),
+        ]);
     }
+}
 }
