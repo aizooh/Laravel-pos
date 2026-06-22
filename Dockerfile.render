@@ -13,7 +13,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
 
 # ---------- Stage 3: Final runtime image ----------
-FROM php:8.3-fpm
+FROM php:8.4-fpm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx \
