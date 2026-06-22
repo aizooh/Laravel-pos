@@ -15,6 +15,7 @@ php artisan view:cache
 
 # Run migrations automatically on every deploy (safe with --force in production)
 php artisan migrate --force
+php artisan db:seed --force
 
 # Hand off to supervisord which runs nginx + php-fpm
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
